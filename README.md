@@ -15,7 +15,9 @@ The actual content can be influenced by ane nvironment variable, a command line 
     # Bypoassing the randomness with a command line parameter
     go run main.go -pokemon pikachu
     
-    
+    # Just run this through Docker
+    docker run -d -p 8080:8080 tolleiv/pokesrv
+
 ## References
 
   The app makes use of other projects. The [Gin](https://github.com/gin-gonic/gin) HTTP wrapper is used to provide the HTTP parser, The [Pokemon Hollow](http://www.dafont.com/pokemon.font) font is used along with the great data from the [PokeAPI](https://pokeapi.co) project.
