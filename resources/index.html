@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Your page title here :)</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <style type="text/css">
+        @font-face {
+            font-family: "Pokemon Hollow";
+            src: url("/resources/font/dahot.Pokemon Hollow.ttf");
+        }
+    </style>
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+<!-- Primary Page Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container">
+    <div class="row">
+        <div class="one-half column" style="margin-top: 15%">
+            <p>Your personal<br/><img width="300px"
+                                      src="//upload.wikimedia.org/wikipedia/commons/f/f7/English_Pok%C3%A9mon_logo.svg"/>
+                is</p>
+            <span id="personalpokemon"></span>
+        </div>
+    </div>
+</div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script>
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    $(document).ready(function () {
+        $.ajax({
+            url: "/whoami",
+            success: function (result) {
+                console.log(result.sprites)
+                $("#personalpokemon").html(
+                        "<img style='vertical-align:middle' src='" + result.sprites.front_shiny + "'/>" +
+                        "<h3 style='display:inline;font-family: \"Pokemon Hollow\"'>" + capitalizeFirstLetter(result.name) + "</h3>" +
+                        "<img style='vertical-align:middle' src='" + result.sprites.front_default + "'/>"
+                );
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
