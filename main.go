@@ -15,7 +15,7 @@ import (
 func main() {
 	var data []byte
 
-	cmdPokemon := flag.String("pokemon", os.Getenv("POKEMOM"), "Pokemon name to use")
+	cmdPokemon := flag.String("pokemon", os.Getenv("POKEMON"), "Pokemon name to use")
 	flag.Parse()
 
 	if len(*cmdPokemon) > 0 {
