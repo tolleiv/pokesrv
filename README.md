@@ -2,7 +2,7 @@
 
 This web app is used as a demo application which brings up a HTTP service with some Pokemon content.
 
-The actual content can be influenced by ane nvironment variable, a command line flag or the hostname.
+The actual content can be influenced by an environment variable, a command line flag or the hostname.
 
 ## Usage
 
