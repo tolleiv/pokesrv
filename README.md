@@ -6,14 +6,17 @@ The actual content can be influenced by an environment variable, a command line 
 
 ## Usage
 
+    # Build binary
+    go build .
+
     # Use the hostname to pick a pseudo-random pokemon
-    go run main.go
+    pokesrv
     
     # Bypassing the randomness with an environment variable 
-    POKEMON=gengar go run main.go
+    POKEMON=gengar pokesrv
     
     # Bypoassing the randomness with a command line parameter
-    go run main.go -pokemon pikachu
+    pokesrv -pokemon pikachu
     
     # Just run this through Docker
     docker run -d -p 8080:8080 tolleiv/pokesrv
